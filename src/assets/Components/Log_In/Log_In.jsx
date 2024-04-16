@@ -1,6 +1,6 @@
 
 
-const Sign_in = () => {
+const Log_In = () => {
     return (
         <div>
             <h2>This is sign in form</h2>
@@ -8,4 +8,4 @@ const Sign_in = () => {
     );
 };
 
-export default Sign_in;
+export default Log_In;

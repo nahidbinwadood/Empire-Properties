@@ -1,52 +1,55 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./assets/Components/Homepage/Homepage";
-import MainLayout from './assets/Components/MainLayout/MainLayout';
+import MainLayout from "./assets/Components/MainLayout/MainLayout";
 import UserProfile from "./assets/Components/UserProfile/UserProfile";
 import UpdateProfile from "./assets/Components/UpdateProfile/UpdateProfile";
 import Estate_Details from "./assets/Components/Estate_Details/Estate_Details";
-import Sign_up from "./assets/Components/Sign_Up/Sign_up";
-import Sign_in from "./assets/Components/Sign_In/Sign_in";
+import Register from "./assets/Components/Register/Register";
+import Log_In from "./assets/Components/Log_In/Log_In";
+import FirebaseProvider from "./assets/Components/FirebaseProvier/FirebaseProvider";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<MainLayout></MainLayout>,
-    children:[
+    element: <MainLayout></MainLayout>,
+    children: [
       {
-        path:'/',
-        element:<Homepage></Homepage>,
-        loader:() => fetch('/data.json')
+        path: "/",
+        element: <Homepage></Homepage>,
+        loader: () => fetch("/data.json"),
       },
       {
-        path: 'estate_details/:id',
-        element: <Estate_Details></Estate_Details> ,
-        loader: () => fetch(`/data.json`)
+        path: "estate_details/:id",
+        element: <Estate_Details></Estate_Details>,
+        loader: () => fetch(`/data.json`),
       },
       {
-        path:'/update-profile',
-        element:<UpdateProfile></UpdateProfile>
+        path: "/update-profile",
+        element: <UpdateProfile></UpdateProfile>,
       },
       {
-        path: '/user-profile',
-        element:<UserProfile></UserProfile>
+        path: "/user-profile",
+        element: <UserProfile></UserProfile>,
       },
       {
-        path: '/sign_up',
-        element:<Sign_up></Sign_up>
+        path: "/register",
+        element: <Register></Register>,
       },
       {
-        path: '/sign_in',
-        element:<Sign_in></Sign_in>
-      }
-    ]
+        path: "/log_in",
+        element: <Log_In></Log_In>,
+      },
+    ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <FirebaseProvider>
+      <RouterProvider router={router} />
+    </FirebaseProvider>
   </React.StrictMode>
 );

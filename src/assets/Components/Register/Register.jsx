@@ -1,4 +1,17 @@
-const Sign_up = () => {
+
+import { Link } from "react-router-dom";
+import { auth } from "../Firebase/Firebase.config";
+
+const Register = () => {
+    const handleRegister=e=>{
+        e.preventDefault();
+        const email=e.target.email.value;
+        const img_url=e.target.url.value;
+        const password=e.target.password.value;
+        // console.log(email,img_url,password);
+
+        
+    }
   return (
     // <div className="hero min-h-screen bg-base-200">
     //   <div className="hero-content flex-col lg:flex gap-12">
@@ -42,25 +55,31 @@ const Sign_up = () => {
     //     </div>
     //   </div>
     // </div>
+
+    
     <div className="container mx-auto">
-        <h2 className="pp text-5xl mt-20 text-center font-bold mb-20">Sign Up </h2>
-        <div className="container mx-auto">
-            <form className="border-2 border-gray-500 p-8 rounded-xl">
+        <h2 className="pp text-5xl mt-20 text-center  font-bold mb-20">Register </h2>
+        <div className="container w-1/2 mx-auto">
+            <form onSubmit={handleRegister} className="border-2 border-gray-500 p-8 rounded-xl">
                 <div className="w-1/2 mx-auto flex  flex-col  gap-2 mb-6">
                     <label className="pp font-semibold text-xl" htmlFor="">Name:</label>
-                    <input type="text" name="name" id="" className="input input-bordered w-full"/>
+                    <input type="text" name="name" id="" required className="input input-bordered w-full"/>
                 </div>
                 <div className="w-1/2 mx-auto flex flex-col gap-2 mb-6">
                     <label className="pp font-semibold text-xl" htmlFor="">Email:</label>
-                    <input type="email" name="email" id="" className="input input-bordered w-full"/>
+                    <input type="email" name="email" id="" required className="input input-bordered w-full"/>
+                </div>
+                <div className="w-1/2 mx-auto flex flex-col gap-2 mb-6">
+                    <label className="pp font-semibold text-xl" htmlFor="">Photo Url:</label>
+                    <input type="url" name="url" id="" required className="input input-bordered w-full"/>
                 </div>
                 <div className="w-1/2 mx-auto flex flex-col gap-2 mb-6">
                     <label className="pp font-semibold text-xl" htmlFor="">Password:</label>
-                    <input type="password" name="password" id="" className="input input-bordered w-full"/>
+                    <input type="password" name="password" id="" required className="input input-bordered w-full"/>
                 </div>
-                <div className="w-1/2 mx-auto flex flex-col gap-2 mb-6">
-                    <label className="pp font-semibold text-xl" htmlFor="">Name:</label>
-                    <input type="text" name="name" id="" className="input input-bordered w-full"/>
+                <div className="flex items-center justify-center gap-5 mb-4">
+                    <h2 className="pp font-semibold"> Already have an account ?</h2>
+                    <Link to='/log_in' className="mr-4 md:mr-0 px-4 py-2 lg:px-6 lg:py-2 rounded-lg hover:scale-105 cursor-pointer transition text-white pp  lg:text-lg bg-[#EB6753] ">Log In </Link>
                 </div>
 
                 <div className="w-1/2 mx-auto flex flex-col gap-2 mb-6">
@@ -72,4 +91,4 @@ const Sign_up = () => {
   );
 };
 
-export default Sign_up;
+export default Register;

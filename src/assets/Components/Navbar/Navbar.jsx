@@ -1,6 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
 
-
 const Navbar = () => {
 
   return (
@@ -46,8 +45,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end md:gap-4">
-                    <a className="mr-4 md:mr-0 px-4 py-2 lg:px-6 lg:py-3 rounded-lg hover:scale-105 cursor-pointer transition text-white pp font-semibold lg:text-lg bg-[#EB6753] ">Sign In </a>
-                    <a className="hidden md:flex px-4 py-2 lg:px-6 lg:py-3 rounded-lg hover:scale-105 cursor-pointer transition text-white pp font-semibold lg:text-lg bg-[#59C6D2] ">Sign Up </a>
+                    <Link to='/Sign_in' className="mr-4 md:mr-0 px-4 py-2 lg:px-6 lg:py-3 rounded-lg hover:scale-105 cursor-pointer transition text-white pp font-semibold lg:text-lg bg-[#EB6753] ">Sign In </Link>
+                    <Link to='/Sign_up' className="hidden md:flex px-4 py-2 lg:px-6 lg:py-3 rounded-lg hover:scale-105 cursor-pointer transition text-white pp font-semibold lg:text-lg bg-[#59C6D2] ">Sign Up </Link>
                     
                 
                 </div>

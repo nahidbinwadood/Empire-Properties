@@ -7,6 +7,8 @@ import MainLayout from './assets/Components/MainLayout/MainLayout';
 import UserProfile from "./assets/Components/UserProfile/UserProfile";
 import UpdateProfile from "./assets/Components/UpdateProfile/UpdateProfile";
 import Estate_Details from "./assets/Components/Estate_Details/Estate_Details";
+import Sign_up from "./assets/Components/Sign_Up/Sign_up";
+import Sign_in from "./assets/Components/Sign_In/Sign_in";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: '/user-profile',
         element:<UserProfile></UserProfile>
+      },
+      {
+        path: '/sign_up',
+        element:<Sign_up></Sign_up>
+      },
+      {
+        path: '/sign_in',
+        element:<Sign_in></Sign_in>
       }
     ]
   },

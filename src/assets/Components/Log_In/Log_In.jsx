@@ -1,5 +1,5 @@
 import { Link} from "react-router-dom";
-import { FaEye, FaEyeSlash,FaGoogle,FaGithub } from "react-icons/fa";
+import { FaEye, FaEyeSlash,FaGoogle,FaGithub,FaFacebook } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import UseAuth from "../Hook/UseAuth";
 import { useState } from "react";
@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 const Log_In = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { logIn ,googleLogin,githubSignIn} = UseAuth();
+  const { logIn ,googleLogin,githubSignIn,facebookLogin} = UseAuth();
   const { register, handleSubmit } = useForm();
 
   
@@ -93,6 +93,10 @@ const Log_In = () => {
           <div onClick={()=>githubSignIn()} className="w-1/2 mx-auto pp font-semibold hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#000] px-6 py-3 rounded-lg gap-4 mb-6">
             <FaGithub className="size-6"/>
             Sign With GitHub
+          </div>
+          <div onClick={()=>facebookLogin()} className="w-1/2 mx-auto pp font-semibold hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#4081EC] px-6 py-3 rounded-lg gap-4 mb-6">
+            <FaFacebook className="size-6"/>
+            Sign With FaceBook
           </div>
           
         </form>

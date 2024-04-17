@@ -7,7 +7,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../Firebase/Firebase.config";
-import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider,FacebookAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext(null);
 const FirebaseProvider = ({ children }) => {
@@ -17,6 +17,7 @@ const FirebaseProvider = ({ children }) => {
   //Providers:
   const googleProvider = new GoogleAuthProvider();
   const GithubProvider = new GithubAuthProvider();
+  const facebookProvider=new FacebookAuthProvider()
 
   //Observer:
   useEffect(() => {
@@ -50,11 +51,19 @@ const FirebaseProvider = ({ children }) => {
  const githubSignIn=()=>{
     return signInWithPopup(auth,GithubProvider);
  } 
+
+    //Facebook:
+
+const facebookLogin=()=>{
+    return signInWithPopup(auth,facebookProvider);
+}
   const allValues = {
+    user,
     registerAccount,
     logIn,
     googleLogin,
-    githubSignIn
+    githubSignIn,
+    facebookLogin
   };
   return (
     <AuthContext.Provider value={allValues}>{children}</AuthContext.Provider>

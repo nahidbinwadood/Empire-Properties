@@ -1,16 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import UseAuth from "../Hook/UseAuth";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 
-const Register = () => {
+const Register = ({title}) => {
   //   const [registerError, setRegisterError] = useState([]);
 
   const [showPassword, setShowPassword] = useState(false);
-
+  const navigate = useNavigate();
+  const location = useLocation();
   const { registerAccount } = UseAuth();
   const {register,handleSubmit} = useForm();
   const onSubmit = (data) => {
@@ -18,6 +21,9 @@ const Register = () => {
 
     registerAccount(email, password)
         .then((result) => {console.log(result);
+          if (result.user) {
+            navigate(location?.state || "/")
+          }
         toast.success("Account created Successfully")
   });
 
@@ -87,6 +93,9 @@ const Register = () => {
     // </div>
 
     <div className="container mx-auto">
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
       <h2 className="pp text-5xl mt-20 text-center  font-bold mb-20">
         Register{" "}
       </h2>
@@ -176,5 +185,7 @@ const Register = () => {
     </div>
   );
 };
-
+Register.propTypes = {
+  title: PropTypes.object.isRequired,
+};
 export default Register;

@@ -4,7 +4,6 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./assets/Components/Homepage/Homepage";
 import MainLayout from "./assets/Components/MainLayout/MainLayout";
-import UserProfile from "./assets/Components/UserProfile/UserProfile";
 import UpdateProfile from "./assets/Components/UpdateProfile/UpdateProfile";
 import Estate_Details from "./assets/Components/Estate_Details/Estate_Details";
 import Register from "./assets/Components/Register/Register";
@@ -12,43 +11,44 @@ import Log_In from "./assets/Components/Log_In/Log_In";
 import FirebaseProvider from "./assets/Components/FirebaseProvier/FirebaseProvider";
 import ErrorPage from "./assets/Components/ErrorPage/ErrorPage";
 import Blogs from "./assets/Components/Blogs/Blogs";
+import Private_Route from "./assets/Components/Private_Route/Private_Route";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage title='Error'></ErrorPage>,
     children: [
       {
         path: "/",
-        element: <Homepage></Homepage>,
+        element: <Homepage title='Empire Properties'></Homepage>,
         loader: () => fetch("/data.json"),
       },
       {
         path: "estate_details/:id",
-        element: <Estate_Details></Estate_Details>,
+        element: (
+          <Private_Route>
+            <Estate_Details title='Estate Details'></Estate_Details>
+          </Private_Route>
+        ),
         loader: () => fetch(`/data.json`),
       },
       {
         path: "/update-profile",
-        element: <UpdateProfile></UpdateProfile>,
-      },
-      {
-        path: "/user-profile",
-        element: <UserProfile></UserProfile>,
+        element: <UpdateProfile title='Update Profile'></UpdateProfile>,
       },
       {
         path: "/register",
-        element: <Register></Register>,
+        element: <Register title='Register'></Register>,
       },
       {
         path: "/log_in",
-        element: <Log_In></Log_In>,
+        element: <Log_In title='Log In'></Log_In>,
       },
       {
-        path:'/blogs',
-        element:<Blogs></Blogs>
-      }
+        path: "/blogs",
+        element: <Blogs title='Blogs'></Blogs>,
+      },
     ],
   },
 ]);

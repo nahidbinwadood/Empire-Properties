@@ -1,30 +1,50 @@
-import { Link} from "react-router-dom";
-import { FaEye, FaEyeSlash,FaGoogle,FaGithub,FaFacebook } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import {
+  FaEye,
+  FaEyeSlash,
+  FaGoogle,
+  FaGithub,
+  FaFacebook,
+} from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import UseAuth from "../Hook/UseAuth";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
-const Log_In = () => {
+const Log_In = ({title}) => {
   const [showPassword, setShowPassword] = useState(false);
-  const { logIn ,googleLogin,githubSignIn,facebookLogin} = UseAuth();
+  const { logIn, googleLogin, githubSignIn, facebookLogin } = UseAuth();
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  
+  const socialLogin = (providers) => {
+    providers().then((result) => {
+      if (result.user) {
+        navigate(location?.state || "/")
+      }
+    });
+  };
 
   const onSubmit = (data) => {
     const { email, password } = data;
 
-    logIn(email, password)
-        .then((result) => {console.log(result);
-        toast.success("Log In Successfully")
-  });
+    logIn(email, password).then((result) => {
+      console.log(result);
+      if (result.user) {
+        navigate(location?.state || "/")
+      }
+      toast.success("Log In Successfully");
+    });
   };
-
-
 
   return (
     <div className="container mx-auto">
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
       <h2 className="pp text-5xl mt-20 text-center  font-bold mb-20">
         Log In{" "}
       </h2>
@@ -33,7 +53,6 @@ const Log_In = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="border-2 border-gray-500 p-8 rounded-xl"
         >
-
           <div className="w-1/2 mx-auto flex flex-col gap-2 mb-6">
             <label className="pp font-semibold text-xl" htmlFor="">
               Email:
@@ -85,24 +104,34 @@ const Log_In = () => {
               Log In{" "}
             </button>
           </div>
-          
-          <div onClick={() => googleLogin()} className="w-1/2 mx-auto pp font-semibold hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#4081EC] px-6 py-3 rounded-lg gap-4 mb-6">
-            <FaGoogle className="size-6"/>
+
+          <div
+            onClick={() => socialLogin(googleLogin)}
+            className="w-1/2 mx-auto pp font-semibold hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#4081EC] px-6 py-3 rounded-lg gap-4 mb-6"
+          >
+            <FaGoogle className="size-6" />
             Sign With Google
           </div>
-          <div onClick={()=>githubSignIn()} className="w-1/2 mx-auto pp font-semibold hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#000] px-6 py-3 rounded-lg gap-4 mb-6">
-            <FaGithub className="size-6"/>
+          <div
+            onClick={() => socialLogin(githubSignIn)}
+            className="w-1/2 mx-auto pp font-semibold hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#000] px-6 py-3 rounded-lg gap-4 mb-6"
+          >
+            <FaGithub className="size-6" />
             Sign With GitHub
           </div>
-          <div onClick={()=>facebookLogin()} className="w-1/2 mx-auto pp font-semibold hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#4081EC] px-6 py-3 rounded-lg gap-4 mb-6">
-            <FaFacebook className="size-6"/>
+          <div
+            onClick={() =>  socialLogin(facebookLogin)}
+            className="w-1/2 mx-auto pp font-semibold hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#4081EC] px-6 py-3 rounded-lg gap-4 mb-6"
+          >
+            <FaFacebook className="size-6" />
             Sign With FaceBook
           </div>
-          
         </form>
       </div>
     </div>
   );
 };
-
+Log_In.propTypes = {
+  title: PropTypes.object.isRequired,
+};
 export default Log_In;

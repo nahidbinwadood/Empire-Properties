@@ -3,7 +3,7 @@ import UseAuth from "../Hook/UseAuth";
 import { useState } from "react";
 
 const Navbar = () => {
-  const { user } = UseAuth();
+  const { user,logOut } = UseAuth();
   const [hovered, setHovered] = useState(false);
   return (
     <div className="container mx-auto pt-4">
@@ -103,7 +103,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="flex pp font-bold">
-                  <button className="btn btn-sm  btn-ghost">Logout</button>
+                  <button onClick={logOut} className="btn btn-sm  btn-ghost">Logout</button>
                 </div>
               </div>
             ) : (

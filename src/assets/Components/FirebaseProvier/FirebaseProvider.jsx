@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../Firebase/Firebase.config";
 import {
@@ -19,8 +20,8 @@ const FirebaseProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   const [loading, setLoading] = useState(true);
-  console.log(user);
-  console.log(loading);
+  // console.log(user);
+
 
   //Providers:
   const googleProvider = new GoogleAuthProvider();
@@ -57,6 +58,21 @@ const FirebaseProvider = ({ children }) => {
     signOut(auth);
   };
 
+
+  //Update Profile:
+  // const navigate = useNavigate();
+  const updateUserProfile = (name,email,image) => {
+     updateProfile(auth.currentUser, {
+        displayName: name,
+        email:email,
+        photoURL: image
+      }).then(()=>{
+        setUser({ ...user, displayName: name, email: email, photoURL: image });
+        
+      })
+     return; 
+}
+
   //Google:
 
   const googleLogin = () => {
@@ -84,7 +100,8 @@ const FirebaseProvider = ({ children }) => {
     githubSignIn,
     facebookLogin,
     logOut,
-    loading
+    loading,
+    updateUserProfile
   };
   return (
     <AuthContext.Provider value={allValues}>{children}</AuthContext.Provider>

@@ -14,14 +14,18 @@ const Register = ({title}) => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const { registerAccount } = UseAuth();
+  const { registerAccount,updateUserProfile } = UseAuth();
   const {register,handleSubmit} = useForm();
+
+
+  
   const onSubmit = (data) => {
-    const { email, password } = data;
+    const { email, password,fullName,photoUrl } = data;
 
     registerAccount(email, password)
         .then((result) => {console.log(result);
           if (result.user) {
+            updateUserProfile(fullName,email,photoUrl)
             navigate(location?.state || "/")
           }
         toast.success("Account created Successfully")
@@ -39,7 +43,7 @@ const Register = ({title}) => {
         "Your Password Must have an Uppercase letter in the password"
       );
       return;
-    } else if (!/[a-]/.test(password)) {
+    } else if (!/[a-z]/.test(password)) {
       // setRegisterError(' Must have an Lowercase letter in the password');
       toast.error(
         "Your Password Must have an Lowercase letter in the password"

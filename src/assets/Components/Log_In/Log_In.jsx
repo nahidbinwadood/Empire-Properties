@@ -37,7 +37,10 @@ const Log_In = ({title}) => {
         navigate(location?.state || "/")
       }
       toast.success("Log In Successfully");
-    });
+    })
+    .catch(()=>{
+      toast.error("Invalid Credentials");
+    })
   };
 
   return (

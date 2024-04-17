@@ -23,6 +23,7 @@ const Log_In = ({title}) => {
   const socialLogin = (providers) => {
     providers().then((result) => {
       if (result.user) {
+        toast.success("Log In Successfully");
         navigate(location?.state || "/")
       }
     });
@@ -44,19 +45,22 @@ const Log_In = ({title}) => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div data-aos="fade-up"
+    data-aos-anchor-placement="top-bottom"
+    data-aos-easing="linear"
+    data-aos-duration="1000" className="container mx-auto">
       <Helmet>
         <title>{title}</title>
       </Helmet>
       <h2 className="pp text-5xl mt-20 text-center  font-bold mb-20">
         Log In{" "}
       </h2>
-      <div className="container w-1/2 mx-auto">
+      <div className="container px-6 lg:w-1/2 md:mx-auto">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="border-2 border-gray-500 p-8 rounded-xl"
         >
-          <div className="w-1/2 mx-auto flex flex-col gap-2 mb-6">
+          <div className="lg:w-1/2 mx-auto flex flex-col gap-2 mb-6">
             <label className="pp font-semibold text-xl" htmlFor="">
               Email:
             </label>
@@ -70,7 +74,7 @@ const Log_In = ({title}) => {
             />
           </div>
 
-          <div className="w-1/2 mx-auto flex flex-col gap-2 mb-6">
+          <div className="lg:w-1/2 mx-auto flex flex-col gap-2 mb-6">
             <label className="pp font-semibold text-xl" htmlFor="">
               Password:
             </label>
@@ -92,7 +96,7 @@ const Log_In = ({title}) => {
               </span>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-5 mb-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-5 mb-8">
             <h2 className="pp font-semibold"> Need an account ?</h2>
             <Link
               to="/register"
@@ -101,8 +105,8 @@ const Log_In = ({title}) => {
               Register{" "}
             </Link>
           </div>
-
-          <div className="w-1/2 mx-auto flex flex-col gap-2 mb-6">
+          <div className="border border-[#30325E33] "></div>
+          <div className="lg:w-1/2 mx-auto flex flex-col gap-2 my-6">
             <button className="mr-4 md:mr-0 px-4 py-2 lg:px-6 lg:py-3 rounded-lg hover:scale-105 cursor-pointer transition text-white pp font-semibold lg:text-lg bg-[#EB6753] ">
               Log In{" "}
             </button>
@@ -110,21 +114,21 @@ const Log_In = ({title}) => {
 
           <div
             onClick={() => socialLogin(googleLogin)}
-            className="w-1/2 mx-auto pp font-semibold hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#4081EC] px-6 py-3 rounded-lg gap-4 mb-6"
+            className="lg:w-1/2 mx-auto pp font-semibold text-center md:text-start hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#4081EC] px-6 py-3 rounded-lg gap-4 mb-6"
           >
             <FaGoogle className="size-6" />
             Sign With Google
           </div>
           <div
             onClick={() => socialLogin(githubSignIn)}
-            className="w-1/2 mx-auto pp font-semibold hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#000] px-6 py-3 rounded-lg gap-4 mb-6"
+            className="lg:w-1/2 text-center md:text-star mx-auto pp font-semibold hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#000] px-6 py-3 rounded-lg gap-4 mb-6"
           >
             <FaGithub className="size-6" />
             Sign With GitHub
           </div>
           <div
             onClick={() =>  socialLogin(facebookLogin)}
-            className="w-1/2 mx-auto pp font-semibold hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#4081EC] px-6 py-3 rounded-lg gap-4 mb-6"
+            className="lg:w-1/2 text-center md:text-star mx-auto pp font-semibold hover:scale-105 cursor-pointer transition text-white flex items-center justify-center bg-[#4081EC] px-6 py-3 rounded-lg gap-4 mb-6"
           >
             <FaFacebook className="size-6" />
             Sign With FaceBook

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "animate.css";
 
 const Banner = () => {
   const [currentSlider, setCurrentSlider] = useState(0);
@@ -40,6 +41,9 @@ const Banner = () => {
   const isSmallScreen = window.innerWidth <= 768;
   return (
     <div
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1000"
       className=" container mx-auto rounded-xl mt-20 w-full h-60 sm:h-96 md:h-[540px] flex flex-col xl:flex-row items-center justify-center gap-5 lg:gap-10 relative bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear z-50 overflow-hidden"
       style={{
         backgroundImage: `url(${

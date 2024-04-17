@@ -34,7 +34,9 @@ const Navbar = () => {
               <NavLink to="/">
                 <a>Home</a>
               </NavLink>
-              
+              <NavLink to="/update-profile">
+                <a>Update Profile</a>
+              </NavLink>
               
               <NavLink to="blogs">
                 <a>Blogs</a>
@@ -43,7 +45,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" className="cursor-pointer">
-            <h2 className="pp font-bold text-2xl">
+            <h2 className="pp font-bold text-xl md:text-2xl">
               {" "}
               Empire <span className="text-[#EB6753]">Properties</span>
             </h2>
@@ -78,10 +80,10 @@ const Navbar = () => {
             </NavLink>
           </ul>
         </div>
-        <div className="navbar-end md:gap-4">
+        <div className="navbar-end gap-4">
           {/* <Link to='/log_in' className="mr-4 md:mr-0 px-4 py-2 lg:px-6 lg:py-3 rounded-lg hover:scale-105 cursor-pointer transition text-white pp font-semibold lg:text-lg bg-[#EB6753] ">Log In </Link> */}
 
-          <div className="navbar-end">
+          <div className="md:navbar-end">
             {user?.email ? (
               <div className="flex items-center gap-4">
                 <div

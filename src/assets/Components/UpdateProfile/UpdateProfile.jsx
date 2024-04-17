@@ -7,22 +7,26 @@ import toast from "react-hot-toast";
 
 const UpdateProfile = ({ title }) => {
   const { register, handleSubmit } = useForm();
-  const { user,updateUserProfile } = UseAuth();
+  const { user, updateUserProfile } = UseAuth();
   const { displayName, email, photoURL } = user;
-  
+
   // const location = useLocation();
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data);
     const { name, email, photoUrl } = data;
-    updateUserProfile(name,email,photoUrl)
-    toast.success("Profile Updated Successfully")
-    navigate('/')
-  
-  }
+    updateUserProfile(name, email, photoUrl);
+    toast.success("Profile Updated Successfully");
+    navigate("/");
+  };
   return (
-    <div>
+    <div
+      data-aos="fade-down"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-easing="linear"
+      data-aos-duration="1000"
+    >
       <Helmet>
         <title>{title}</title>
       </Helmet>
@@ -37,7 +41,11 @@ const UpdateProfile = ({ title }) => {
         <div className="container w-1/2 mx-auto">
           <div className="text-center space-y-5 my-5 border-2 rounded-xl border-gray-700 p-5">
             <div>
-              <img className="size-24 rounded-full mx-auto" src={photoURL} alt="" />
+              <img
+                className="size-24 rounded-full mx-auto"
+                src={photoURL}
+                alt=""
+              />
             </div>
             <h2 className="pp text-2xl">Name : {displayName} </h2>
             <h2 className="pp text-2xl">Email : {email} </h2>
@@ -67,7 +75,7 @@ const UpdateProfile = ({ title }) => {
                 Email:
               </label>
               <input
-              placeholder={email}
+                placeholder={email}
                 type="email"
                 name="email"
                 id=""
@@ -81,7 +89,7 @@ const UpdateProfile = ({ title }) => {
                 Photo Url:
               </label>
               <input
-              placeholder={photoURL}
+                placeholder={photoURL}
                 type="url"
                 name="url"
                 id=""

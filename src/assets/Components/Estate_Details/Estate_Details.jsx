@@ -25,12 +25,12 @@ const Estate_Details = ({ title }) => {
       <div className="grid grid-cols-1 gap-8 md:gap-24 md:grid-cols-2">
         <div className="bg-[#1313130F] px-5 py-8 rounded-xl">
           <img
-            className="object-cover items-center mx-auto h-full rounded-md lg:h-[650px] lg:w-[400px]"
+            className="animate__animated animate__backInLeft object-cover items-center mx-auto h-full rounded-md lg:h-[650px] lg:w-[400px]"
             src={image}
             alt=""
           />
         </div>
-        <div className="space-y-5">
+        <div className="space-y-5 animate__animated animate__backInRight">
           <h1 className="pf font-bold text-3xl md:text-5xl text-black">
             {estate_title}
           </h1>
@@ -50,7 +50,7 @@ const Estate_Details = ({ title }) => {
             </span>
           </h2>
 
-          <div className="flex gap-8">
+          <div className="flex flex-col md:flex-row gap-8">
             <span className="text-black pp font-bold">Facilities :</span>
             <h3 className="text-gray-600 text-lg pp font-semibold">
               {" "}

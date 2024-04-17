@@ -2,7 +2,10 @@ import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 const Blogs = ({ title }) => {
   return (
-    <div className="container mx-auto px-6 md:px-0 ">
+    <div data-aos="fade-right"
+    data-aos-anchor-placement="top-bottom"
+    data-aos-easing="linear"
+    data-aos-duration="1000" className="container mx-auto px-6 md:px-0 ">
       <Helmet>
         <title>{title}</title>
       </Helmet>

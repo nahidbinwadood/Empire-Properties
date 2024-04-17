@@ -91,11 +91,11 @@ const Navbar = () => {
                 >
                   <img
                     className="rounded-full cursor-pointer transition hover:scale-95"
-                    src={user.photoURL}
+                    src={user.photoURL ?  user.photoURL : 'https://scontent.fdac5-1.fna.fbcdn.net/v/t39.30808-6/250822561_1470299466703345_2332700590607614779_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeF-vn8A-0PZ1NrFgqc8oYnbF7X_BIBXRUsXtf8EgFdFS1R4EV6X9V954Qa-3xUh8P6Ft4NwGb5sJ7RELlF6uwcg&_nc_ohc=INN6kzo4IGEAb7NlA42&_nc_ht=scontent.fdac5-1.fna&oh=00_AfBJw1ztGye0Hg5_6x-SoD1eODay_jldAkd-r-Gy_7YJaQ&oe=6625DFCC'}
                     alt={user.displayName}
                   />
                   {hovered && (
-                    <div className="absolute -left-1/2 top-1/2 transform transition bg-white bg-opacity-70 p-2 text-sm font-bold rounded">
+                    <div className="absolute -left-28 top-10 transition transform bg-white bg-opacity-70 p-2 text-sm font-bold pp rounded">
                       
                         <div className="pp font bold">{user.displayName}</div>
                       
@@ -104,7 +104,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="flex pp font-bold">
-                  <button onClick={logOut} className="btn btn-sm  btn-ghost">Logout</button>
+                  <button onClick={logOut} className="btn btn-sm hover:scale-125 transition  btn-secondary">Logout</button>
                 </div>
               </div>
             ) : (

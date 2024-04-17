@@ -51,7 +51,6 @@ const Estate = ({ estate }) => {
             <h3 className="font-semibold pp text-[#34475E]  animate__animated animate__backInRight">{area} </h3>
           </div>
           <div className="flex lg:items-center lg:justify-center gap-2 animate__animated animate__backInRight">
-            <img className="h-5 w-4" src="/image" alt="" />
             <h3 className="pp font-semibold text-[#34475E] ">
               Status : <span className="text-red-700">{status}</span>
             </h3>

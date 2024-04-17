@@ -12,42 +12,52 @@ import FirebaseProvider from "./assets/Components/FirebaseProvier/FirebaseProvid
 import ErrorPage from "./assets/Components/ErrorPage/ErrorPage";
 import Blogs from "./assets/Components/Blogs/Blogs";
 import Private_Route from "./assets/Components/Private_Route/Private_Route";
+import Update from "./assets/Components/Private_Route/Update";
+import Blog from "./assets/Components/Private_Route/Blog";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <ErrorPage title='Error'></ErrorPage>,
+    errorElement: <ErrorPage title="Error"></ErrorPage>,
     children: [
       {
         path: "/",
-        element: <Homepage title='Empire Properties'></Homepage>,
+        element: <Homepage title="Empire Properties"></Homepage>,
         loader: () => fetch("/data.json"),
       },
       {
         path: "estate_details/:id",
         element: (
           <Private_Route>
-            <Estate_Details title='Estate Details'></Estate_Details>
+            <Estate_Details title="Estate Details"></Estate_Details>
           </Private_Route>
         ),
         loader: () => fetch(`/data.json`),
       },
       {
         path: "/update-profile",
-        element: <UpdateProfile title='Update Profile'></UpdateProfile>,
+        element: (
+          <Update>
+            <UpdateProfile title="Update Profile"></UpdateProfile>
+          </Update>
+        ),
       },
       {
         path: "/register",
-        element: <Register title='Register'></Register>,
+        element: <Register title="Register"></Register>,
       },
       {
         path: "/log_in",
-        element: <Log_In title='Log In'></Log_In>,
+        element: <Log_In title="Log In"></Log_In>,
       },
       {
         path: "/blogs",
-        element: <Blogs title='Blogs'></Blogs>,
+        element: (
+          <Blog>
+            <Blogs title="Blogs"></Blogs>
+          </Blog>
+        ),
       },
     ],
   },

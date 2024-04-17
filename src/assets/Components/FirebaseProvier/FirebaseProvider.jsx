@@ -32,8 +32,8 @@ const FirebaseProvider = ({ children }) => {
    const unSubscribe= onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        setLoading(false)
       }
+      setLoading(false)
     });
     return ()=>unSubscribe();
   }, []);

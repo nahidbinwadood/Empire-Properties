@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const Navbar = () => {
   const { user,logOut } = UseAuth();
+
   const [hovered, setHovered] = useState(false);
   return (
     <div className="container mx-auto pt-4">

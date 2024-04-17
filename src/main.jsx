@@ -10,11 +10,14 @@ import Estate_Details from "./assets/Components/Estate_Details/Estate_Details";
 import Register from "./assets/Components/Register/Register";
 import Log_In from "./assets/Components/Log_In/Log_In";
 import FirebaseProvider from "./assets/Components/FirebaseProvier/FirebaseProvider";
+import ErrorPage from "./assets/Components/ErrorPage/ErrorPage";
+import Blogs from "./assets/Components/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -42,6 +45,10 @@ const router = createBrowserRouter([
         path: "/log_in",
         element: <Log_In></Log_In>,
       },
+      {
+        path:'/blogs',
+        element:<Blogs></Blogs>
+      }
     ],
   },
 ]);

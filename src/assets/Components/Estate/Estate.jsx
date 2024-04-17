@@ -17,7 +17,6 @@ const Estate = ({ estate }) => {
     facilities,
   } = estate;
 
-  console.log(image);
   return (
     <div>
       <div className="space-y-6 p-6 border border-gray-400 rounded-2xl">

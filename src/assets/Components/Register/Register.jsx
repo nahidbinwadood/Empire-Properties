@@ -18,22 +18,6 @@ const Register = ({ title }) => {
 
   const onSubmit = (data) => {
     const { email, password, fullName, photoUrl } = data;
-
-    registerAccount(email, password)
-      .then((result) => {
-        console.log(result);
-        if (result.user) {
-          updateUserProfile(fullName, email, photoUrl);
-          navigate(location?.state || "/");
-        }
-        toast.success("Account created Successfully");
-      })
-      .catch(() => {
-        toast.error("Email Already In use !");
-      });
-
-    //Password Validation:
-
     if (password.length < 6) {
       // setRegisterError('Length must be at least 6 character')
       toast.error("Your Password Length must be at least 6 character");
@@ -51,6 +35,23 @@ const Register = ({ title }) => {
       );
       return;
     }
+
+    registerAccount(email, password)
+      .then((result) => {
+        console.log(result);
+        if (result.user) {
+          updateUserProfile(fullName, email, photoUrl);
+          navigate(location?.state || "/");
+        }
+        toast.success("Account created Successfully");
+      })
+      .catch(() => {
+        toast.error("Email Already In use !");
+      });
+
+    //Password Validation:
+
+    
   };
 
   return (

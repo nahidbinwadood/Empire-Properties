@@ -3,7 +3,10 @@ import { ScrollRestoration } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="mt-10 py-6 pp px-4 divide-y bg-gray-700 text-white">
+    <footer  data-aos="flip-right"
+    data-aos-anchor="#example-anchor"
+    data-aos-offset="500"
+    data-aos-duration="1500" className="mt-10 py-6 pp px-4 divide-y bg-gray-700 text-white">
         <ScrollRestoration />
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">

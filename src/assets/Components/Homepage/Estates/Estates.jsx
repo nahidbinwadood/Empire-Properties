@@ -5,9 +5,12 @@ import 'animate.css';
 const Estates = () => {
   const estates=useLoaderData();
   return (
-    <div className="mx-8 md:mx-4 ">
-      <h2 className="text-3xl text-center mt-20 font-bold pp animate__animated animate__backInDown ">Estates</h2>
-      <p className="text-center text-md md:w-1/2 mx-auto pp mt-4 animate__animated animate__backInDown ">
+    <div data-aos="fade-up"
+    data-aos-anchor-placement="top-bottom"
+    data-aos-easing="linear"
+    data-aos-duration="1500" className="mx-8 md:mx-4 ">
+      <h2 className="text-3xl text-center mt-20 font-bold pp ">Estates</h2>
+      <p className="text-center text-md md:w-1/2 mx-auto pp mt-4 ">
         Luxurious real estate epitomizes refined living, blending architectural
         mastery with opulent amenities, promising comfort, indulgence, and a
         statement of distinction.

@@ -7,7 +7,10 @@ const Navbar = () => {
 
   const [hovered, setHovered] = useState(false);
   return (
-    <div className="container mx-auto pt-4">
+    <div data-aos="fade-down"
+    data-aos-anchor-placement="top-bottom"
+    data-aos-easing="linear"
+    data-aos-duration="1000" className="container mx-auto pt-4">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">

@@ -1,8 +1,32 @@
-# React + Vite
+# Title: Empire Properties
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Site : 
+-[Empire Properties](https://effortless-phoenix-fdea55.netlify.app/)
 
-Currently, two official plugins are available:
+Features and Characteristics :
+- User Friendly
+- Easy to open an Account by using Gmail
+- Private Routes
+- Private Routes
+- Dynamic Title
+- Mobile Responsive
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+Resources:
+- [React Router](https://reactrouter.com/en/main)
+- [React-Hot-Toast](https://react-hot-toast.com/)
+- [React-AOS-Package](https://michalsnik.github.io/aos/)
+- [Animate.css](https://animate.style/)
+- [React Hook Form](https://react-hook-form.com/)
+- [React Helmet](https://www.npmjs.com/package/react-helmet-async)
+- [React Router Dom](https://reactrouter.com/en/main)
+- [TailwindCSS Buttons](https://devdojo.com/tailwindcss/buttons)
+- [Mamba UI - Components](https://mambaui.com/components)
+- [Animated Gradient Text](https://www.andrealves.dev/blog/how-to-make-an-animated-gradient-text-with-tailwindcss/)
+- [React-Hot-Toast](https://react-hot-toast.com/)
+- [React-Spinner](https://www.npmjs.com/package/react-spinners)
+- [React-Icons](https://react-icons.github.io/react-icons/)
+- [React-Markdown](https://www.npmjs.com/package/react-markdown)
+- [Prop-Types](https://www.npmjs.com/package/prop-types)
+- [Daisy UI](https://daisyui.com/)
+- [TailwindCSS](https://tailwindcss.com/)

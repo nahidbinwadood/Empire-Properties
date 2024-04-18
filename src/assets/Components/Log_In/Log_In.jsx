@@ -107,7 +107,7 @@ const Log_In = ({title}) => {
           </div>
           <div className="border border-[#30325E33] "></div>
           <div className="lg:w-1/2 mx-auto flex flex-col gap-2 my-6">
-            <button className="mr-4 md:mr-0 px-4 py-2 lg:px-6 lg:py-3 rounded-lg hover:scale-105 cursor-pointer transition text-white pp font-semibold lg:text-lg bg-[#EB6753] ">
+            <button className="lg:mr-4 md:mr-0 px-4 py-2 lg:px-6 lg:py-3 rounded-lg hover:scale-105 cursor-pointer transition text-white pp font-semibold lg:text-lg bg-[#EB6753] ">
               Log In{" "}
             </button>
           </div>

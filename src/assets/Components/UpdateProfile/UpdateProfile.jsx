@@ -34,11 +34,11 @@ const UpdateProfile = ({ title }) => {
         <Helmet>
           <title>{title}</title>
         </Helmet>
-        <h2 className="pp text-5xl mt-20 text-center  font-bold mb-20">
+        <h2 className="pp text-3xl md:text-5xl mt-20 text-center  font-bold mb-20">
           Update Your Profile{" "}
         </h2>
 
-        <div className="container w-1/2 mx-auto">
+        <div className="container px-6 lg:w-1/2 md:mx-auto">
           <div className="text-center space-y-5 my-5 border-2 rounded-xl border-gray-700 p-5">
             <div>
               <img
@@ -47,16 +47,16 @@ const UpdateProfile = ({ title }) => {
                 alt=""
               />
             </div>
-            <h2 className="pp text-2xl">Name : {displayName} </h2>
-            <h2 className="pp text-2xl">Email : {email} </h2>
+            <h2 className="pp md:text-2xl">Name : {displayName} </h2>
+            <h2 className="pp md:text-2xl">Email : {email} </h2>
           </div>
         </div>
-        <div className="container w-1/2 mx-auto">
+        <div className="container px-6 lg:w-1/2 md:mx-auto">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="border-2 border-gray-500 p-8 rounded-xl"
           >
-            <div className="w-1/2 mx-auto flex flex-col gap-2 mb-6">
+            <div className="lg:w-1/2 mx-auto flex flex-col gap-2 mb-6">
               <label className="pp font-semibold text-xl" htmlFor="">
                 Name:
               </label>
@@ -70,7 +70,7 @@ const UpdateProfile = ({ title }) => {
                 {...register("name", { required: true })}
               />
             </div>
-            <div className="w-1/2 mx-auto flex flex-col gap-2 mb-6">
+            <div className="lg:w-1/2 mx-auto flex flex-col gap-2 mb-6">
               <label className="pp font-semibold text-xl" htmlFor="">
                 Email:
               </label>
@@ -84,7 +84,7 @@ const UpdateProfile = ({ title }) => {
                 {...register("email", { required: true })}
               />
             </div>
-            <div className="w-1/2 mx-auto flex flex-col gap-2 mb-6">
+            <div className="lg:w-1/2 mx-auto flex flex-col gap-2 mb-6">
               <label className="pp font-semibold text-xl" htmlFor="">
                 Photo Url:
               </label>
@@ -99,8 +99,8 @@ const UpdateProfile = ({ title }) => {
               />
             </div>
 
-            <div className="w-1/2 mx-auto flex flex-col gap-2 mb-6">
-              <button className="mr-4 md:mr-0 px-4 py-2 lg:px-6 lg:py-3 rounded-lg hover:scale-105 cursor-pointer transition text-white pp font-semibold lg:text-lg bg-[#EB6753] ">
+            <div className="lg:w-1/2 mx-auto flex flex-col gap-2 mb-6">
+              <button className="lg:mr-4 md:mr-0 px-4 py-2 lg:px-6 lg:py-3 rounded-lg hover:scale-105 cursor-pointer transition text-white pp font-semibold lg:text-lg bg-[#EB6753] ">
                 Update{" "}
               </button>
             </div>

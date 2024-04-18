@@ -51,7 +51,7 @@ const Estate_Details = ({ title }) => {
           </h2>
 
           <div className="flex flex-col md:flex-row gap-8">
-            <span className="text-black pp font-bold pt-4 md:pt-0">Facilities :</span>
+            <span className="text-black pp font-bold pt-4 md:pt-1">Facilities :</span>
             <h3 className="text-gray-600 md:text-lg pp font-semibold">
               {" "}
               {facilities[0]}{" "}

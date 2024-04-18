@@ -5,28 +5,28 @@ const Banner = () => {
   const [currentSlider, setCurrentSlider] = useState(0);
   const sliders = [
     {
-      img: "https://i.ibb.co/rbKg1dp/1.webp",
-      title: "Phase 1",
+      img: "https://i.ibb.co/jbZxNFL/2.jpg",
+      title: "Luxurious Mansion",
       des: "Experience the pinnacle of luxury living with Luxorius Real Estate: Where dreams find their address.",
     },
     {
-      img: "https://i.ibb.co/867gcvP/2.jpg",
-      title: "Phase 2",
+      img: "https://i.ibb.co/PFkkjPh/1.jpg",
+      title: "Glorious Penthouse",
       des: "Unlock the door to opulence: Explore Luxorius Real Estate's exclusive listings today",
     },
     {
-      img: "https://i.ibb.co/bPMW7bj/3.jpg",
-      title: "Phase 3",
+      img: "https://i.ibb.co/KrLkJHn/3.jpg",
+      title: "Awesome Villa",
       des: "Indulge in extravagance: Discover unparalleled elegance with Luxorius Real Estate",
     },
     {
-      img: "https://i.ibb.co/F8VcVZ0/4.jpg",
-      title: "Phase 4",
+      img: "https://i.ibb.co/Vq820HR/5.jpg",
+      title: "Beachfront Properties",
       des: "Luxury redefined: Step into a world of sophistication with Luxorius Real Estate",
     },
     {
-      img: "https://i.ibb.co/cTWTJvp/5.jpg",
-      title: "Phase 5",
+      img: "https://i.ibb.co/vXvMyRF/6.jpg",
+      title: "Beautiful Resort",
       des: "A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.",
     },
   ];
@@ -44,7 +44,7 @@ const Banner = () => {
       data-aos="fade-down"
       data-aos-easing="linear"
       data-aos-duration="1000"
-      className=" container mx-auto rounded-xl mt-20 w-full h-60 sm:h-96 md:h-[540px] flex flex-col xl:flex-row items-center justify-center gap-5 lg:gap-10 relative bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear z-50 overflow-hidden"
+      className="px-6 md:px-0 container mx-auto rounded-xl mt-20 w-full h-60 sm:h-96 md:h-[540px] flex flex-col xl:flex-row items-center justify-center gap-5 lg:gap-10 relative bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear z-50 overflow-hidden"
       style={{
         backgroundImage: `url(${
           currentSlider === 0

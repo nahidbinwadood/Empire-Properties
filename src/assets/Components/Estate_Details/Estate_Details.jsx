@@ -31,36 +31,36 @@ const Estate_Details = ({ title }) => {
           />
         </div>
         <div className="space-y-5 animate__animated animate__backInRight">
-          <h1 className="pf font-bold text-3xl md:text-5xl text-black">
+          <h1 className="pf font-bold text-2xl md:text-5xl text-black">
             {estate_title}
           </h1>
 
-          <h4 className="text-[#131313CF] pp text-xl">Area : {area} </h4>
+          <h4 className="text-[#131313CF] pp text-lg md:text-xl">Area : {area} </h4>
           <hr />
-          <h4 className="text-[#131313CF] ws text-xl">
+          <h4 className="text-[#131313CF] text-lg  md:text-xl">
             category : {segment_name}
           </h4>
           <hr />
 
           <h2 className="text-[#131313CF] font-bold pp">
-            Description :{" "}
-            <span className="text-gray-600 pp font-semibold">
-              {" "}
-              {description}{" "}
+            Description :
+            <span className="text-gray-600 pp pl-4 font-semibold">
+              
+              {description}
             </span>
           </h2>
 
           <div className="flex flex-col md:flex-row gap-8">
-            <span className="text-black pp font-bold">Facilities :</span>
-            <h3 className="text-gray-600 text-lg pp font-semibold">
+            <span className="text-black pp font-bold pt-4">Facilities :</span>
+            <h3 className="text-gray-600 md:text-lg pp font-semibold">
               {" "}
               {facilities[0]}{" "}
             </h3>
-            <h3 className="text-gray-600 text-lg pp font-semibold">
+            <h3 className="text-gray-600 md:text-lg pp font-semibold">
               {" "}
               {facilities[1]}{" "}
             </h3>
-            <h3 className="text-gray-600 text-lg pp font-semibold">
+            <h3 className="text-gray-600 md:text-lg pp font-semibold">
               {" "}
               {facilities[2]}{" "}
             </h3>
@@ -76,7 +76,7 @@ const Estate_Details = ({ title }) => {
             <div className="pp font-semibold text-black space-y-5">
               <h2> {price} </h2>
               <h2 className="text-[#EB6753]">{status}</h2>
-              <h2> {location}</h2>
+              <h2> {location.slice(0,5)}</h2>
               <h2>{rating} </h2>
             </div>
           </div>
